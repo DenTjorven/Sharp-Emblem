@@ -23,6 +23,5 @@
             <RadioButton x:Name="CpuSelect" Content="Manual Select" Height="36" Width="208" FontSize="22" Checked="CpuSelect_Checked"/>
             <RadioButton x:Name="CpuRandom" Content="Random Select" Height="36" Width="208" FontSize="22" Checked="CpuRandom_Checked"/>
         </StackPanel>
-
     </Grid>
 </Page>

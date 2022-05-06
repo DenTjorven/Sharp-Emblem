@@ -49,18 +49,18 @@ namespace Sharp_Emblem
         {
             if(App.spelerRandom && App.cpuRandom)
             {
-                SpelerRandom();
-                CpuRandom();
+                SpelerRan();
+                CpuRan();
                 MainWindow.frame.Navigate(new System.Uri("TileGame.xaml", UriKind.RelativeOrAbsolute));
             }
             else if(!App.spelerRandom && App.cpuRandom)
             {
-                CpuRandom();
+                CpuRan();
                 MainWindow.frame.Navigate(new System.Uri("SpelerSelect.xaml", UriKind.RelativeOrAbsolute));
             }
             else if(App.spelerRandom && !App.cpuRandom)
             {
-                SpelerRandom();
+                SpelerRan();
                 MainWindow.frame.Navigate(new System.Uri("CpuSelect.xaml", UriKind.RelativeOrAbsolute));
             }
             else
@@ -69,7 +69,7 @@ namespace Sharp_Emblem
             }
         }
 
-        public void SpelerRandom()
+        public void SpelerRan()
         {
             var dupe = true;
             var tempRan = new Random();
@@ -117,7 +117,7 @@ namespace Sharp_Emblem
             }
 
         }
-        public void CpuRandom()
+        public void CpuRan()
         {
             var dupe = true;
             var tempRan = new Random();

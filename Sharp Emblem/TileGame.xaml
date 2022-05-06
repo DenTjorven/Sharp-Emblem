@@ -11,6 +11,5 @@
     <Grid Background="#FFEDCB52">
         <Image x:Name="image" HorizontalAlignment="Center" Height="198" Margin="0,46,0,0" VerticalAlignment="Top" Width="572" Source="/SharpEmblemLogo.svg.png"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="134" Width="403" FontSize="72"><Run Language="nl-be" Text="Game Temp"/></TextBlock>
-
     </Grid>
 </Page>
