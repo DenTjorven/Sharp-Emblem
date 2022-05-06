@@ -1,4 +1,4 @@
-﻿<Page x:Class="Sharp_Emblem.MainMenu"
+﻿<Page x:Class="Sharp_Emblem.TileGame"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,13 +6,11 @@
       xmlns:local="clr-namespace:Sharp_Emblem"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="MainMenu">
+      Title="TileGame">
 
     <Grid Background="#FFEDCB52">
-        <Button x:Name="SimSelect" Content="Start Battle Sim" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Height="27" Width="164" Click="SimSelect_Click"/>
-        <Button x:Name="GameSelect" Content="Start Game" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top" Height="27" Width="164" Click="GameSelect_Click"/>
-        <Button x:Name="Exit" Content="Exit" HorizontalAlignment="Center" Margin="0,395,0,0" VerticalAlignment="Top" Height="27" Width="77"/>
         <Image x:Name="image" HorizontalAlignment="Center" Height="198" Margin="0,46,0,0" VerticalAlignment="Top" Width="572" Source="/SharpEmblemLogo.svg.png"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="134" Width="403" FontSize="72"><Run Language="nl-be" Text="Game Temp"/></TextBlock>
 
     </Grid>
 </Page>

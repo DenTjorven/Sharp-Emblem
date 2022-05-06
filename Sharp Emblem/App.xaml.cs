@@ -27,6 +27,7 @@ namespace Sharp_Emblem
 
         public static int indexPlayer1 = 0; public static int indexPlayer2 = 0; public static int indexPlayer3 = 0; public static int indexPlayer4 = 0;
         public static int indexCpu1 = 0; public static int indexCpu2 = 0; public static int indexCpu3 = 0; public static int indexCpu4 = 0;
+        public static bool hard = false; public static bool lunatic = false; public static bool spelerRandom = false; public static bool cpuRandom = false;
 
         public App()
         {

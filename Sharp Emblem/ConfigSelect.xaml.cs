@@ -24,5 +24,145 @@ namespace Sharp_Emblem
         {
             InitializeComponent();
         }
+
+        private void SpelerSelect_Checked(object sender, RoutedEventArgs e)
+        {
+            App.spelerRandom = false;
+        }
+
+        private void SpelerRandom_Checked(object sender, RoutedEventArgs e)
+        {
+            App.spelerRandom = true;
+        }
+
+        private void CpuSelect_Checked(object sender, RoutedEventArgs e)
+        {
+            App.cpuRandom = false;
+        }
+
+        private void CpuRandom_Checked(object sender, RoutedEventArgs e)
+        {
+            App.cpuRandom = true;
+        }
+
+        private void BevestigSelect_Click(object sender, RoutedEventArgs e)
+        {
+            if(App.spelerRandom && App.cpuRandom)
+            {
+                SpelerRandom();
+                CpuRandom();
+                MainWindow.frame.Navigate(new System.Uri("TileGame.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else if(!App.spelerRandom && App.cpuRandom)
+            {
+                CpuRandom();
+                MainWindow.frame.Navigate(new System.Uri("SpelerSelect.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else if(App.spelerRandom && !App.cpuRandom)
+            {
+                SpelerRandom();
+                MainWindow.frame.Navigate(new System.Uri("CpuSelect.xaml", UriKind.RelativeOrAbsolute));
+            }
+            else
+            {
+                MainWindow.frame.Navigate(new System.Uri("SpelerSelect.xaml", UriKind.RelativeOrAbsolute));
+            }
+        }
+
+        public void SpelerRandom()
+        {
+            var dupe = true;
+            var tempRan = new Random();
+            App.indexPlayer1 = tempRan.Next(2, 60); App.indexPlayer2 = tempRan.Next(2, 60); App.indexPlayer3 = tempRan.Next(2, 60); App.indexPlayer4 = tempRan.Next(2, 60);
+
+            while (dupe)
+            {
+                if ((App.indexPlayer1 == App.indexPlayer2) || (App.indexPlayer1 == App.indexPlayer3) || (App.indexPlayer1 == App.indexPlayer4))
+                {
+                    dupe = true;
+                }
+                else
+                {
+                    dupe = false;
+                }
+                if ((App.indexPlayer2 == App.indexPlayer1) || (App.indexPlayer2 == App.indexPlayer3) || (App.indexPlayer2 == App.indexPlayer4))
+                {
+                    dupe = true;
+                }
+                else
+                {
+                    dupe = false;
+                }
+                if ((App.indexPlayer3 == App.indexPlayer2) || (App.indexPlayer3 == App.indexPlayer1) || (App.indexPlayer3 == App.indexPlayer4))
+                {
+                    dupe = true;
+                }
+                else
+                {
+                    dupe = false;
+                }
+                if ((App.indexPlayer4 == App.indexPlayer2) || (App.indexPlayer4 == App.indexPlayer3) || (App.indexPlayer4 == App.indexPlayer1))
+                {
+                    dupe = true;
+                }
+                else
+                {
+                    dupe = false;
+                }
+
+                if (dupe)
+                {
+                    App.indexPlayer1 = tempRan.Next(2, 60); App.indexPlayer2 = tempRan.Next(2, 60); App.indexPlayer3 = tempRan.Next(2, 60); App.indexPlayer4 = tempRan.Next(2, 60);
+                }
+            }
+
+        }
+        public void CpuRandom()
+        {
+            var dupe = true;
+            var tempRan = new Random();
+            App.indexCpu1 = tempRan.Next(2, 60); App.indexCpu2 = tempRan.Next(2, 60); App.indexCpu3 = tempRan.Next(2, 60); App.indexCpu4 = tempRan.Next(2, 60);
+
+            while (dupe)
+            {
+                if ((App.indexCpu1 == App.indexCpu2) || (App.indexCpu1 == App.indexCpu3) || (App.indexCpu1 == App.indexCpu4))
+                {
+                    dupe = true;
+                }
+                else
+                {
+                    dupe = false;
+                }
+                if ((App.indexCpu2 == App.indexCpu1) || (App.indexCpu2 == App.indexCpu3) || (App.indexCpu2 == App.indexCpu4))
+                {
+                    dupe = true;
+                }
+                else
+                {
+                    dupe = false;
+                }
+                if ((App.indexCpu3 == App.indexCpu2) || (App.indexCpu3 == App.indexCpu1) || (App.indexCpu3 == App.indexCpu4))
+                {
+                    dupe = true;
+                }
+                else
+                {
+                    dupe = false;
+                }
+                if ((App.indexCpu4 == App.indexCpu2) || (App.indexCpu4 == App.indexCpu3) || (App.indexCpu4 == App.indexCpu1))
+                {
+                    dupe = true;
+                }
+                else
+                {
+                    dupe = false;
+                }
+
+                if (dupe)
+                {
+                    App.indexCpu1 = tempRan.Next(2, 60); App.indexCpu2 = tempRan.Next(2, 60); App.indexCpu3 = tempRan.Next(2, 60); App.indexCpu4 = tempRan.Next(2, 60);
+                }
+            }
+        }
     }
 }

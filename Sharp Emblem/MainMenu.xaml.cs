@@ -29,5 +29,10 @@ namespace Sharp_Emblem
         {
             MainWindow.frame.Navigate(new System.Uri("BattleSim.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        private void GameSelect_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.frame.Navigate(new System.Uri("Load.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

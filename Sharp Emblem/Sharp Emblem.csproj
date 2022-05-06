@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <None Remove="diifScreenPicture.png" />
-    <None Remove="LoadScreenPicture.png" />
     <None Remove="SharpEmblemLogo.svg.png" />
   </ItemGroup>
 
@@ -23,10 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="LoadScreenPicture.png" />
     <Resource Include="Pictures\diifScreenPicture.png" />
     <Resource Include="Pictures\LoadScreenPicture.png" />
     <Resource Include="Pictures\SharpEmblemLogo.svg.png" />
+    <Resource Include="SharpEmblemLogo.svg.png" />
   </ItemGroup>
 
 </Project>

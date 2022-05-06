@@ -10,24 +10,24 @@
 
     <Grid x:Name="Simulator" Background="#FFEDCB52">
         <StackPanel Margin="108,245,553,10">
-            <ComboBox x:Name="Char1Box" Width="120" SelectionChanged="PlayerBox_SelectionChanged"/>
+            <ComboBox x:Name="Char1Box" Width="120"/>
         </StackPanel>
         <StackPanel Margin="252,245,415,10">
-            <ComboBox x:Name="Char2Box" Width="120" SelectionChanged="CpuBox_SelectionChanged"/>
+            <ComboBox x:Name="Char2Box" Width="120"/>
         </StackPanel>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="143" Margin="10,31,0,0" VerticalAlignment="Top" Width="253" Source="/SharpEmblemLogo.svg.png"/>
-        <TextBlock x:Name="SpelerBox" HorizontalAlignment="Left" Margin="20,316,20,316" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="98" FontSize="24" TextDecorations="{x:Null}" FontWeight="Bold"><Run Language="nl-be" Text="Speler"/></TextBlock>
+        <TextBlock x:Name="SpelerBox" HorizontalAlignment="Left" Margin="692,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="98" FontSize="24" TextDecorations="{x:Null}" FontWeight="Bold"><Run Language="nl-be" Text="CPU"/></TextBlock>
         <StackPanel Margin="390,245,277,10">
-            <ComboBox x:Name="Char3Box" Width="120" SelectionChanged="CpuBox_SelectionChanged"/>
+            <ComboBox x:Name="Char3Box" Width="120"/>
         </StackPanel>
         <StackPanel Margin="528,245,139,10">
-            <ComboBox x:Name="Char4Box" Width="120" SelectionChanged="CpuBox_SelectionChanged"/>
+            <ComboBox x:Name="Char4Box" Width="120"/>
         </StackPanel>
-        <Button x:Name="Bevestig" Content="Bevestig" HorizontalAlignment="Left" Margin="686,312,0,0" VerticalAlignment="Top" Height="27" Width="76"/>
-        <Button x:Name="VorigeSelect" Content="Vorige" HorizontalAlignment="Left" Margin="686,344,0,0" VerticalAlignment="Top" Height="27" Width="76"/>
+        <Button x:Name="Bevestig" Content="Bevestig" HorizontalAlignment="Left" Margin="32,312,0,0" VerticalAlignment="Top" Height="26" Width="76" Click="Bevestig_Click"/>
+        <Button x:Name="VorigeSelect" Content="Vorige" HorizontalAlignment="Left" Margin="32,344,0,0" VerticalAlignment="Top" Height="27" Width="76" Click="VorigeSelect_Click"/>
         <TextBlock x:Name="Char1" HorizontalAlignment="Left" Margin="113,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="139" FontSize="24" TextDecorations="{x:Null}" FontWeight="Bold"><Run Language="nl-be" Text="Character 1"/></TextBlock>
         <TextBlock x:Name="Char2" HorizontalAlignment="Left" Margin="528,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="139" FontSize="24" TextDecorations="{x:Null}" FontWeight="Bold"><Run Text="Character "/><Run Language="nl-be" Text="4"/></TextBlock>
         <TextBlock x:Name="Char3" HorizontalAlignment="Left" Margin="390,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="139" FontSize="24" TextDecorations="{x:Null}" FontWeight="Bold"><Run Text="Character "/><Run Language="nl-be" Text="3"/></TextBlock>
         <TextBlock x:Name="Char4" HorizontalAlignment="Left" Margin="252,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="139" FontSize="24" TextDecorations="{x:Null}" FontWeight="Bold"><Run Text="Character "/><Run Language="nl-be" Text="2"/></TextBlock>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="143" Margin="10,31,0,0" VerticalAlignment="Top" Width="253" Source="/SharpEmblemLogo.svg.png"/>
     </Grid>
 </Page>

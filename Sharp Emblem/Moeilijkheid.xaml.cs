@@ -24,5 +24,27 @@ namespace Sharp_Emblem
         {
             InitializeComponent();
         }
+
+        private void NormalSelect_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.frame.Navigate(new System.Uri("ConfigSelect.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void HardSelect_Click(object sender, RoutedEventArgs e)
+        {
+            App.hard = true;
+            MainWindow.frame.Navigate(new System.Uri("ConfigSelect.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void LunaticSelect_Click(object sender, RoutedEventArgs e)
+        {
+            App.lunatic = true;
+            MainWindow.frame.Navigate(new System.Uri("ConfigSelect.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void VorigeSelect_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.frame.Navigate(new System.Uri("Load.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

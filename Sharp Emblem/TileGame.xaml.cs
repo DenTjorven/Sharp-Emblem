@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace Sharp_Emblem
 {
     /// <summary>
-    /// Interaction logic for Load.xaml
+    /// Interaction logic for TileGame.xaml
     /// </summary>
-    public partial class Load : Page
+    public partial class TileGame : Page
     {
-        public Load()
+        public TileGame()
         {
             InitializeComponent();
-        }
-
-        private void StartNew_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.frame.Navigate(new System.Uri("Moeilijkheid.xaml", UriKind.RelativeOrAbsolute));
-        }
-
-        private void VorigeSelect_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.frame.Navigate(new System.Uri("MainMenu.xaml", UriKind.RelativeOrAbsolute));
         }
     }
 }

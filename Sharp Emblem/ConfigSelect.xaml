@@ -14,14 +14,14 @@
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="105" Width="244" FontSize="36" FontWeight="Bold" Foreground="#FFFD2F2F" TextAlignment="Center"><Run Language="nl-be" Text="Character "/><LineBreak/><Run Text="Configuration"/></TextBlock>
         <TextBlock x:Name="SpelerBox" HorizontalAlignment="Left" Margin="20,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="98" FontSize="24" TextDecorations="{x:Null}" FontWeight="Bold"><Run Language="nl-be" Text="Speler"/></TextBlock>
         <TextBlock x:Name="CpuBox" HorizontalAlignment="Left" Margin="720,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="83" Width="98" FontSize="24" TextDecorations="{x:Null}" FontWeight="Bold"><Run Language="nl-be" Text="CPU"/></TextBlock>
-        <Button x:Name="VorigeSelect_Copy" Content="Bevestig" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top" Height="27" Width="76"/>
+        <Button x:Name="BevestigSelect" Content="Bevestig" HorizontalAlignment="Center" Margin="0,311,0,0" VerticalAlignment="Top" Height="27" Width="76" Click="BevestigSelect_Click"/>
         <StackPanel Margin="69,307,449,61">
-            <RadioButton x:Name="SpelerSelect" Content="Manual Select" Height="36" Width="208" FontSize="22"/>
-            <RadioButton x:Name="SpelerRandom" Content="Random Select" Height="36" Width="208" FontSize="22"/>
+            <RadioButton x:Name="SpelerSelect" Content="Manual Select" Height="36" Width="208" FontSize="22" Checked="SpelerSelect_Checked"/>
+            <RadioButton x:Name="SpelerRandom" Content="Random Select" Height="36" Width="208" FontSize="22" Checked="SpelerRandom_Checked"/>
         </StackPanel>
         <StackPanel Margin="508,304,10,64">
-            <RadioButton x:Name="CpuSelect" Content="Manual Select" Height="36" Width="208" FontSize="22"/>
-            <RadioButton x:Name="CpuRandom" Content="Random Select" Height="36" Width="208" FontSize="22"/>
+            <RadioButton x:Name="CpuSelect" Content="Manual Select" Height="36" Width="208" FontSize="22" Checked="CpuSelect_Checked"/>
+            <RadioButton x:Name="CpuRandom" Content="Random Select" Height="36" Width="208" FontSize="22" Checked="CpuRandom_Checked"/>
         </StackPanel>
 
     </Grid>

@@ -11,11 +11,11 @@
 
     <Grid Background="#FFEDCB52">
         <Image x:Name="image" HorizontalAlignment="Left" Height="143" Margin="10,31,0,0" VerticalAlignment="Top" Width="253" Source="/SharpEmblemLogo.svg.png"/>
-        <Button x:Name="HardSelect" Content="Hard" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Height="27" Width="164" Click="SimSelect_Click"/>
-        <Button x:Name="LunaticSelect" Content="Lunatic" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top" Height="27" Width="164"/>
-        <Button x:Name="VorigeSelect" Content="Vorige" HorizontalAlignment="Center" Margin="0,395,0,0" VerticalAlignment="Top" Height="27" Width="77"/>
+        <Button x:Name="HardSelect" Content="Hard" HorizontalAlignment="Center" Margin="0,266,0,0" VerticalAlignment="Top" Height="27" Width="164" Click="HardSelect_Click"/>
+        <Button x:Name="LunaticSelect" Content="Lunatic" HorizontalAlignment="Center" Margin="0,323,0,0" VerticalAlignment="Top" Height="27" Width="164" Click="LunaticSelect_Click"/>
+        <Button x:Name="VorigeSelect" Content="Vorige" HorizontalAlignment="Center" Margin="0,395,0,0" VerticalAlignment="Top" Height="27" Width="77" Click="VorigeSelect_Click"/>
         <Image x:Name="DiffScreenPic" HorizontalAlignment="Left" Height="297" Margin="512,10,0,0" VerticalAlignment="Top" Width="299" Source="/diifScreenPicture.png" OpacityMask="Black"/>
-        <Button x:Name="NormalSelect" Content="Normal" HorizontalAlignment="Center" Margin="0,207,0,0" VerticalAlignment="Top" Height="27" Width="164" Click="SimSelect_Click"/>
+        <Button x:Name="NormalSelect" Content="Normal" HorizontalAlignment="Center" Margin="0,207,0,0" VerticalAlignment="Top" Height="27" Width="164" Click="NormalSelect_Click"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="48" Width="164" FontSize="36" FontWeight="Bold" Foreground="#FFFD2F2F"><Run Language="nl-be" Text="Difficulty"/></TextBlock>
     </Grid>
 </Page>
