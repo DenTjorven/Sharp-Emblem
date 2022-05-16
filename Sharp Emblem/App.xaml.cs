@@ -24,10 +24,16 @@ namespace Sharp_Emblem
     {
 
         public static List<Karakter> karakters = new List<Karakter>();
+        public static List<Karakter> playerChar = new List<Karakter>();
+        public static List<Karakter> cpuChar = new List<Karakter>();
 
         public static int indexPlayer1 = 0; public static int indexPlayer2 = 0; public static int indexPlayer3 = 0; public static int indexPlayer4 = 0;
         public static int indexCpu1 = 0; public static int indexCpu2 = 0; public static int indexCpu3 = 0; public static int indexCpu4 = 0;
         public static bool hard = false; public static bool lunatic = false; public static bool spelerRandom = false; public static bool cpuRandom = false;
+        public static int turn = 0; public static int charcount = 0; public static bool selectchar = true; public static bool cput = false;
+        public static int previousColumn = 9; public static int previousRow = 9;
+
+
 
         public App()
         {
@@ -51,7 +57,7 @@ namespace Sharp_Emblem
                 {
                     var karakter = new Karakter(k.CharId, k.DNaam, k.DHp, k.DHp, k.DAtk, k.DSpd, k.DDef, k.DRes, 0, 0, false, false, 0, "", 0, "", 0, "", 0, "", 0, "", "", 0, false, false, false, false, false, false, false, false, false, false, false, 0, "", 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                                 0,
-                                                0, 0);
+                                                9, 9);
 
                     int i = 0;
 

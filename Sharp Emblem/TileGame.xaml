@@ -8,57 +8,76 @@
       d:DesignHeight="624.249" d:DesignWidth="800"
       Title="TileGame">
 
-    <Grid x:Name="Grid" Background="#FFEDCB52">
-        <Grid x:Name="Game" Margin="166,0,166,0">
-            <Button x:Name="zerozero" Command="{Binding ButtonClickCommand}" CommandParameter="1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="0,0,0,0" Click="ButtonClickCommandHandler"/>
-            <Button x:Name="onezero" Command="{Binding ButtonClickCommand}" CommandParameter="2" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="0,78,0,0"/>
-            <Button x:Name="twozero" Command="{Binding ButtonClickCommand}" CommandParameter="3" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="0,156,0,0"/>
-            <Button x:Name="threezero" Command="{Binding ButtonClickCommand}" CommandParameter="4" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="0,234,0,0"/>
-            <Button x:Name="sevenzero" Command="{Binding ButtonClickCommand}" CommandParameter="8" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="0,546,0,0"/>
-            <Button x:Name="sixzero" Command="{Binding ButtonClickCommand}" CommandParameter="7" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="0,468,0,0"/>
-            <Button x:Name="fivezero" Command="{Binding ButtonClickCommand}" CommandParameter="6" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="0,390,0,0"/>
-            <Button x:Name="fourzero" Command="{Binding ButtonClickCommand}" CommandParameter="5" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="0,312,0,0"/>
-            <Button x:Name="zeroone" Command="{Binding ButtonClickCommand}" CommandParameter="9" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="78,0,0,0"/>
-            <Button x:Name="oneone" Command="{Binding ButtonClickCommand}" CommandParameter="10" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="78,78,0,0"/>
-            <Button x:Name="twoone" Command="{Binding ButtonClickCommand}" CommandParameter="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="78,156,0,0"/>
-            <Button x:Name="threeone" Command="{Binding ButtonClickCommand}" CommandParameter="12" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="78,234,0,0"/>
-            <Button x:Name="sevenone" Command="{Binding ButtonClickCommand}" CommandParameter="16" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="78,546,0,0"/>
-            <Button x:Name="sixone" Command="{Binding ButtonClickCommand}" CommandParameter="15" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="78,468,0,0"/>
-            <Button x:Name="fiveone" Command="{Binding ButtonClickCommand}" CommandParameter="14" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="78,390,0,0"/>
-            <Button x:Name="fourone" Command="{Binding ButtonClickCommand}" CommandParameter="13" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="78,312,0,0"/>
-            <Button x:Name="zerotwo" Command="{Binding ButtonClickCommand}" CommandParameter="17" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="156,0,0,0"/>
-            <Button x:Name="onetwo" Command="{Binding ButtonClickCommand}" CommandParameter="18" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="156,78,0,0"/>
-            <Button x:Name="twotwo" Command="{Binding ButtonClickCommand}" CommandParameter="19" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="156,156,0,0"/>
-            <Button x:Name="threetwo" Command="{Binding ButtonClickCommand}" CommandParameter="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="156,234,0,0"/>
-            <Button x:Name="seventwo" Command="{Binding ButtonClickCommand}" CommandParameter="24" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="156,546,0,0"/>
-            <Button x:Name="sixtwo" Command="{Binding ButtonClickCommand}" CommandParameter="23" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="156,468,0,0"/>
-            <Button x:Name="fivetwo" Command="{Binding ButtonClickCommand}" CommandParameter="22" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="156,390,0,0"/>
-            <Button x:Name="fourtwo" Command="{Binding ButtonClickCommand}" CommandParameter="21" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="156,312,0,0"/>
-            <Button x:Name="zerothree" Command="{Binding ButtonClickCommand}" CommandParameter="25" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="234,0,0,0"/>
-            <Button x:Name="onethree" Command="{Binding ButtonClickCommand}" CommandParameter="26" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="234,78,0,0"/>
-            <Button x:Name="twothree" Command="{Binding ButtonClickCommand}" CommandParameter="27" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="234,156,0,0"/>
-            <Button x:Name="threethree" Command="{Binding ButtonClickCommand}" CommandParameter="28" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="234,234,0,0"/>
-            <Button x:Name="seventhree" Command="{Binding ButtonClickCommand}" CommandParameter="32" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="234,546,0,0"/>
-            <Button x:Name="sixthree" Command="{Binding ButtonClickCommand}" CommandParameter="31" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="234,468,0,0"/>
-            <Button x:Name="fivethree" Command="{Binding ButtonClickCommand}" CommandParameter="30" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="234,390,0,0"/>
-            <Button x:Name="fourthree" Command="{Binding ButtonClickCommand}" CommandParameter="29" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="234,312,0,0"/>
-            <Button x:Name="zerofour" Command="{Binding ButtonClickCommand}" CommandParameter="33" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="312,0,0,0" Click="ButtonClickCommandHandler"/>
-            <Button x:Name="onefour" Command="{Binding ButtonClickCommand}" CommandParameter="34" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="312,78,0,0"/>
-            <Button x:Name="twofour" Command="{Binding ButtonClickCommand}" CommandParameter="35" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="312,156,0,0"/>
-            <Button x:Name="threefour" Command="{Binding ButtonClickCommand}" CommandParameter="36" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="312,234,0,0"/>
-            <Button x:Name="sevenfour" Command="{Binding ButtonClickCommand}" CommandParameter="40" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="312,546,0,0"/>
-            <Button x:Name="sixfour" Command="{Binding ButtonClickCommand}" CommandParameter="39" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="312,468,0,0"/>
-            <Button x:Name="fivefour" Command="{Binding ButtonClickCommand}" CommandParameter="38" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="312,390,0,0"/>
-            <Button x:Name="fourfour" Command="{Binding ButtonClickCommand}" CommandParameter="37" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="312,312,0,0"/>
-            <Button x:Name="zerofive" Command="{Binding ButtonClickCommand}" CommandParameter="41" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="390,0,0,0"/>
-            <Button x:Name="onefive" Command="{Binding ButtonClickCommand}" CommandParameter="42" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="390,78,0,0"/>
-            <Button x:Name="twofive" Command="{Binding ButtonClickCommand}" CommandParameter="43" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="390,156,0,0"/>
-            <Button x:Name="threefive" Command="{Binding ButtonClickCommand}" CommandParameter="44" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="390,234,0,0"/>
-            <Button x:Name="sevenfive" Command="{Binding ButtonClickCommand}" CommandParameter="48" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="390,546,0,0"/>
-            <Button x:Name="sixfive" Command="{Binding ButtonClickCommand}" CommandParameter="47" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="390,468,0,0"/>
-            <Button x:Name="fivefive" Command="{Binding ButtonClickCommand}" CommandParameter="46" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="390,390,0,0"/>
-            <Button x:Name="fourfive" Command="{Binding ButtonClickCommand}" CommandParameter="45" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Margin="390,312,0,0"/>
+    <Grid x:Name="Main" Background="#FFEDCB52">
+        <Grid Row="8" Column="6"  x:Name="Game" Margin="166,0,166,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Grid.Column="0" x:Name="zerozero" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="1" Grid.Column="0" x:Name="onezero" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="2" Grid.Column="0" x:Name="twozero" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="3" Grid.Column="0" x:Name="threezero" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="7" Grid.Column="0" x:Name="sevenzero" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="6" Grid.Column="0" x:Name="sixzero" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="5" Grid.Column="0" x:Name="fivezero" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="4" Grid.Column="0" x:Name="fourzero" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="0" Grid.Column="1" x:Name="zeroone" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="1" Grid.Column="1" x:Name="oneone" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="2" Grid.Column="1" x:Name="twoone" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="3" Grid.Column="1" x:Name="threeone" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="7" Grid.Column="1" x:Name="sevenone" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="6" Grid.Column="1" x:Name="sixone" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="5" Grid.Column="1" x:Name="fiveone" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="4" Grid.Column="1" x:Name="fourone" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="0" Grid.Column="2" x:Name="zerotwo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="1" Grid.Column="2" x:Name="onetwo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="2" Grid.Column="2" x:Name="twotwo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="3" Grid.Column="2" x:Name="threetwo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="7" Grid.Column="2" x:Name="seventwo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="6" Grid.Column="2" x:Name="sixtwo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="5" Grid.Column="2" x:Name="fivetwo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="4" Grid.Column="2" x:Name="fourtwo" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="0" Grid.Column="3" x:Name="zerothree" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="1" Grid.Column="3" x:Name="onethree" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="2" Grid.Column="3" x:Name="twothree" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="3" Grid.Column="3" x:Name="threethree" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="7" Grid.Column="3" x:Name="seventhree" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="6" Grid.Column="3" x:Name="sixthree" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="5" Grid.Column="3" x:Name="fivethree" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="4" Grid.Column="3" x:Name="fourthree" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="0" Grid.Column="4" x:Name="zerofour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="1" Grid.Column="4" x:Name="onefour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="2" Grid.Column="4" x:Name="twofour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="3" Grid.Column="4" x:Name="threefour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="7" Grid.Column="4" x:Name="sevenfour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="6" Grid.Column="4" x:Name="sixfour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="5" Grid.Column="4" x:Name="fivefour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="4" Grid.Column="4" x:Name="fourfour" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="0" Grid.Column="5" x:Name="zerofive" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="1" Grid.Column="5" x:Name="onefive" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="2" Grid.Column="5" x:Name="twofive" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="3" Grid.Column="5" x:Name="threefive" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="7" Grid.Column="5" x:Name="sevenfive" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="6" Grid.Column="5" x:Name="sixfive" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="5" Grid.Column="5" x:Name="fivefive" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
+            <Button Grid.Row="4" Grid.Column="5" x:Name="fourfive" HorizontalAlignment="Left" VerticalAlignment="Top" Height="78" Width="78" Background="#FFDA6262" Click="Tile_Click"/>
         </Grid>
-        
+        <TextBlock x:Name="TestBlock" HorizontalAlignment="Left" Margin="43,223,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

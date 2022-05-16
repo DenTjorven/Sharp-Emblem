@@ -20,6 +20,9 @@ namespace Sharp_Emblem
     /// </summary>
     public partial class TileGame : Page
     {
+        List<Button> buttons = new List<Button>();
+        List<ImageBrush> playerBrushs = new List<ImageBrush>();
+        List<ImageBrush> cpuBrushs = new List<ImageBrush>();
         public TileGame()
         {
             InitializeComponent();
@@ -27,9 +30,33 @@ namespace Sharp_Emblem
             var tempRan = new Random();
             var mapSelect = tempRan.Next(1, 6);
 
+            //Temp
             SetMap1();
+            App.indexPlayer1 = 2; App.indexPlayer2 = 3; App.indexPlayer3 = 4; App.indexPlayer4 = 5;
+            App.indexCpu1 = 6; App.indexCpu2 = 7; App.indexCpu3 = 8; App.indexCpu4 = 9;
+            //
 
             //switch (mapSelect) 1-5:  random map select
+
+            //Adding data to lists for ease of use
+            playerBrushs.Add(new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers1.png", UriKind.Relative))));
+            playerBrushs.Add(new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers2.png", UriKind.Relative))));
+            playerBrushs.Add(new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers3.png", UriKind.Relative))));
+            playerBrushs.Add(new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers4.png", UriKind.Relative))));
+
+            cpuBrushs.Add(new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers1.png", UriKind.Relative))));
+            cpuBrushs.Add(new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers2.png", UriKind.Relative))));
+            cpuBrushs.Add(new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers3.png", UriKind.Relative))));
+            cpuBrushs.Add(new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers4.png", UriKind.Relative))));
+
+            App.playerChar.Add(App.karakters[App.indexPlayer1]); App.playerChar.Add(App.karakters[App.indexPlayer2]); App.playerChar.Add(App.karakters[App.indexPlayer3]); App.playerChar.Add(App.karakters[App.indexPlayer4]);
+            App.cpuChar.Add(App.karakters[App.indexCpu1]); App.cpuChar.Add(App.karakters[App.indexCpu2]); App.cpuChar.Add(App.karakters[App.indexCpu3]); App.cpuChar.Add(App.karakters[App.indexCpu4]);
+
+            foreach (Button btn in FindVisualChildren<Button>(Game))
+            {
+                buttons.Add(btn);
+            }
+            //
 
             foreach (Button btn in FindVisualChildren<Button>(Game))
             {
@@ -39,12 +66,7 @@ namespace Sharp_Emblem
                     btn.IsHitTestVisible = true;
                 }
             }
-
-            string messageBoxText = "Please select starting positions for your units, in order (1-4) on the golden tiles";
-            string caption = "Starting Positions";
-            MessageBoxButton button = MessageBoxButton.OK;
-            MessageBoxImage icon = MessageBoxImage.Information;
-            MessageBox.Show(messageBoxText, caption, button, icon);
+            MessageBox.Show("Please select starting positions for your units, in order (1-4) on the golden tiles", "Starting Positions", MessageBoxButton.OK, MessageBoxImage.Information);
 
 
             
@@ -62,10 +84,12 @@ namespace Sharp_Emblem
                         yield return (T)child;
                     }
 
+#pragma warning disable CS8604 // Possible null reference argument.
                     foreach (T childOfChild in FindVisualChildren<T>(child))
                     {
                         yield return childOfChild;
                     }
+#pragma warning restore CS8604 // Possible null reference argument.
                 }
             }
         }
@@ -82,32 +106,162 @@ namespace Sharp_Emblem
             sevenzero.Background = new SolidColorBrush(Colors.DarkGreen); sevenone.Background = new SolidColorBrush(Colors.Green); seventwo.Background = new SolidColorBrush(Colors.Blue); seventhree.Background = new SolidColorBrush(Colors.DarkGreen); sevenfour.Background = new SolidColorBrush(Colors.Green); sevenfive.Background = new SolidColorBrush(Colors.DarkGreen);
         }
 
-        private void ButtonClickCommandHandler(object parameter)
+        private void Tile_Click(object sender, RoutedEventArgs e)
         {
-            foreach (Button btn in FindVisualChildren<Button>(Game))
+            var currentbutton = (Button)sender;
+            var currentrow = Grid.GetRow(currentbutton);
+            var currentcolumn = Grid.GetColumn(currentbutton);
+            var cursor = App.karakters.Where(z => z.Xcord == currentcolumn && z.Ycord == currentrow);
+
+            if (App.turn == 0)
             {
-                if(btn.CommandParameter == parameter)
+                switch(App.charcount)
                 {
-                    btn.Background = new SolidColorBrush(Colors.Black);
+                    case 0:
+                        App.karakters[App.indexPlayer1].Xcord = currentcolumn; App.karakters[App.indexPlayer1].Ycord = currentrow;
+                        currentbutton.Background = playerBrushs[0];
+                        App.charcount++;
+                        break;
+                    case 1:
+                        App.karakters[App.indexPlayer2].Xcord = currentcolumn; App.karakters[App.indexPlayer2].Ycord = currentrow;
+                        currentbutton.Background = playerBrushs[1];
+                        App.charcount++;
+                        break;
+                    case 2:
+                        App.karakters[App.indexPlayer3].Xcord = currentcolumn; App.karakters[App.indexPlayer3].Ycord = currentrow;
+                        currentbutton.Background = playerBrushs[2];
+                        App.charcount++;
+                        break;
+                    case 3:
+                        App.karakters[App.indexPlayer4].Xcord = currentcolumn; App.karakters[App.indexPlayer4].Ycord = currentrow;
+                        currentbutton.Background = playerBrushs[3];
+                        App.charcount = 0;
+                        if (MessageBox.Show("Are these positions correct?", "Starting Positions", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+                        {
+                            SetMap1();
+                        }
+                        else
+                        {
+                            var index = 0;
+
+                            foreach (Button btn in FindVisualChildren<Button>(Game))
+                            {
+                                if (btn.Background == playerBrushs[0] || btn.Background == playerBrushs[1] || btn.Background == playerBrushs[2] || btn.Background == playerBrushs[3])
+                                {
+
+                                }
+                                else if (((SolidColorBrush)btn.Background).Color == Colors.OrangeRed)
+                                {
+
+                                    //WPF heeft probleem met loopen door all de buttons in grid op basis van SolidColorBrush omdat somige en imagebrush hebben
+
+                                    var row = Grid.GetRow(btn);
+                                    var column = Grid.GetColumn(btn);
+
+                                    btn.Background = cpuBrushs[index];
+
+                                    if (index == 1)
+                                    {
+                                        App.karakters[App.indexCpu1].Xcord = column; App.karakters[App.indexCpu1].Ycord = row;
+                                    }
+                                    else if (index == 2)
+                                    {
+                                        App.karakters[App.indexCpu2].Xcord = column; App.karakters[App.indexCpu2].Ycord = row;
+                                    }
+                                    else if (index == 3)
+                                    {
+                                        App.karakters[App.indexCpu3].Xcord = column; App.karakters[App.indexCpu3].Ycord = row;
+                                    }
+                                    else
+                                    {
+                                        App.karakters[App.indexCpu4].Xcord = column; App.karakters[App.indexCpu4].Ycord = row;
+                                    }
+
+                                    index++;
+                                }
+                            }
+                            App.turn++;
+                        }
+                        break;
+                } 
+            }
+            else
+            {
+                switch (App.charcount)
+                {
+                    case 0:
+                        if (App.selectchar == true)
+                        {
+                            foreach (Button btn in FindVisualChildren<Button>(Game))
+                            {
+                                var row = Grid.GetRow(btn);
+                                App.previousRow = row;
+                                var column = Grid.GetColumn(btn);
+                                App.previousColumn = column;
+
+                                int xdistance = Math.Abs(currentcolumn - column);
+                                int ydistance = Math.Abs(currentrow - row);
+                                int distance = xdistance + ydistance;
+
+                                foreach (var kara in cursor)
+                                {
+                                    if (distance <= kara.Movement)
+                                    {
+                                        if(((SolidColorBrush)btn.Background).Color == Colors.Blue)
+                                        {
+                                        }
+                                        else
+                                        {
+                                            btn.IsHitTestVisible = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        btn.IsHitTestVisible = false;
+                                    }
+                                }
+
+                            }
+                            App.selectchar = false;
+                        }
+                        else
+                        {
+                            foreach (Button btn in FindVisualChildren<Button>(Game))
+                            {
+                                
+                            }
+                        }
+                        App.charcount++;
+                        break;
+                    case 1:
+
+
+                        App.charcount++;
+                        break;
+                    case 2:
+
+
+                        App.charcount++;
+                        break;
+                    case 3:
+                        App.charcount = 0;
+                        App.turn++;
+                        break;
                 }
             }
+            
 
-
-
-
-
-
-
-
-            //switch (parameter)
+            //foreach (Button btn in FindVisualChildren<Button>(Game))
             //{
-            //case 1:
-            //break;
-            //case 2:
-            //break;
+            //if (sender == btn)
+            //{
+            //btn.Background = new SolidColorBrush(Colors.Black);
             //}
+            //}
+
         }
     }
 
 
 }
+
