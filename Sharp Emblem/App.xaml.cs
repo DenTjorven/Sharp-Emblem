@@ -31,8 +31,10 @@ namespace Sharp_Emblem
         public static int indexCpu1 = 0; public static int indexCpu2 = 0; public static int indexCpu3 = 0; public static int indexCpu4 = 0;
         public static bool hard = false; public static bool lunatic = false; public static bool spelerRandom = false; public static bool cpuRandom = false;
         public static int turn = 0; public static int charcount = 0; public static bool selectchar = true; public static bool cput = false;
-        public static int previousColumn = 9; public static int previousRow = 9;
-
+        public static int previousColumn = 9; public static int previousRow = 9; 
+        public static ImageBrush previousBrush = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers1.png", UriKind.Relative)));
+        public static SolidColorBrush originalP1Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalP2Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalP3Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalP4Brush = new SolidColorBrush(Colors.Red);
+        public static SolidColorBrush originalC1Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalC2Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalC3Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalC4Brush = new SolidColorBrush(Colors.Red);
 
 
         public App()
