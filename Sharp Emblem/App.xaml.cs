@@ -31,10 +31,8 @@ namespace Sharp_Emblem
         public static int indexCpu1 = 0; public static int indexCpu2 = 0; public static int indexCpu3 = 0; public static int indexCpu4 = 0;
         public static bool hard = false; public static bool lunatic = false; public static bool spelerRandom = false; public static bool cpuRandom = false;
         public static int turn = 0; public static int charcount = 0; public static bool selectchar = true; public static bool cput = false;
-        public static int previousColumn = 9; public static int previousRow = 9; 
+        public static int previousColumn = 9; public static int previousRow = 9;  public static bool attackcheck = true;
         public static ImageBrush previousBrush = new ImageBrush(new BitmapImage(new Uri(@"C:\Users\Gebruiker\Desktop\School 21-22\Project Sharp Emblem V0.2\Sharp Emblem\Sharp Emblem\Pictures\Battle Numbers1.png", UriKind.Relative)));
-        public static SolidColorBrush originalP1Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalP2Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalP3Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalP4Brush = new SolidColorBrush(Colors.Red);
-        public static SolidColorBrush originalC1Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalC2Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalC3Brush = new SolidColorBrush(Colors.Red); public static SolidColorBrush originalC4Brush = new SolidColorBrush(Colors.Red);
 
 
         public App()
@@ -57,9 +55,10 @@ namespace Sharp_Emblem
 
                 foreach (var k in dbkarakters)
                 {
-                    var karakter = new Karakter(k.CharId, k.DNaam, k.DHp, k.DHp, k.DAtk, k.DSpd, k.DDef, k.DRes, 0, 0, false, false, 0, "", 0, "", 0, "", 0, "", 0, "", "", 0, false, false, false, false, false, false, false, false, false, false, false, 0, "", 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    var karakter = new Karakter(k.CharId, k.DNaam, k.DHp, k.DHp, k.DAtk, k.DSpd, k.DDef, k.DRes, 0, 0, 0, false, false, 0, "", 0, "", 0, "", 0, "", 0, "", "", 0, false, false, false, false, false, false, false, false, false, false, false, 0, "", 0, 0, 0, 0, 0, 0, 0, 0, 0,
                                                 0,
-                                                9, 9);
+                                                9, 9,
+                                                new SolidColorBrush(Colors.Red), new SolidColorBrush(Colors.Red));
 
                     int i = 0;
 
@@ -102,6 +101,15 @@ namespace Sharp_Emblem
                                     if (karakter.Brave)
                                     {
                                         karakter.Spd += -5;
+                                    }
+
+                                    if(karakter.WapenType == "Tome" || karakter.WapenType == "Bow" || karakter.WapenType == "Dagger")
+                                    {
+                                        karakter.Range = 2;
+                                    }
+                                    else
+                                    {
+                                        karakter.Range = 1;
                                     }
                                     break;
                                 }
@@ -221,7 +229,7 @@ namespace Sharp_Emblem
         {
             public int Id;
             public string Name;
-            public int MaxHp; public int CurrentHP; public int Atk; public int Spd; public int Def; public int Res;
+            public int MaxHp; public int CurrentHP; public int Atk; public int Spd; public int Def; public int Res; public int Range;
             public int MovementID; public int Movement; public bool FlyMov; public bool CavMov;
             public int SkillAID; public string SkillAName; public int SkillBID; public string SkillBName; public int SkillCID; public string SkillCName;
             public int WapenID; public string WapenName; public int WapenKracht; public string WapenType; public string WapenKleur; public int WapenModifier;
@@ -231,19 +239,21 @@ namespace Sharp_Emblem
             public int DmgReduc; public int DmgInc; public int HealForDmg;
             public int SpecialCharge;
             public double Xcord; public double Ycord;
+            public SolidColorBrush FirstBrush; public SolidColorBrush SecondBrush;
 
-            public Karakter(int id, string naam, int maxhp, int currenthp, int atk, int spd, int def, int res,
+            public Karakter(int id, string naam, int maxhp, int currenthp, int atk, int spd, int def, int res, int range,
                 int movementID, int movement, bool flyMov, bool cavMov,
                 int skillAID, string skillAName, int skillBID, string skillBName, int skillCID, string skillCName,
                 int wapenID, string wapenName, int wapenKracht, string wapenType, string wapenKleur, int wapenModifier,
                 bool distantC, bool gem, bool draEffect, bool infEffect, bool gEffect, bool armorEffect, bool cavEffect, bool flyEffect, bool brave, bool killer, bool bladeTome,
                 int specialID, string specialName, int specialBaseCD, int atkInc, int defIgn, int proRes, int proDef, int proMisHP, int dmgReduc, int dmgInc, int healForDmg,
                 int specialCharge,
-                double xcord, double ycord)
+                double xcord, double ycord, 
+                SolidColorBrush firstbrush, SolidColorBrush secondbrush)
             {
                 Id = id;
                 Name = naam;
-                MaxHp = maxhp; CurrentHP = currenthp; Atk = atk; Spd = spd; Def = def; Res = res;
+                MaxHp = maxhp; CurrentHP = currenthp; Atk = atk; Spd = spd; Def = def; Res = res; Range = range;
                 MovementID = movementID; Movement = movement; FlyMov = flyMov; CavMov = cavMov;
                 SkillAID = skillAID; SkillAName = skillAName;
                 SkillBID = skillBID; SkillBName = skillBName;
@@ -254,6 +264,8 @@ namespace Sharp_Emblem
                 SpecialCharge = specialCharge;
                 Xcord = xcord;
                 Ycord = ycord;
+                FirstBrush = firstbrush;
+                SecondBrush = secondbrush;
             }
         }
 
