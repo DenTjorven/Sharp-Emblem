@@ -233,18 +233,24 @@ namespace Sharp_Emblem
 
         private void Turn(int currentrow, int currentcolumn, ImageBrush brush, IEnumerable<App.Karakter> cursor, Button currentbutton)
         {
-            if (App.selectchar == true)
+            App.previousRow = currentrow;
+            App.previousColumn = currentcolumn;
+            App.previousBrush = brush;
+            if (App.selectchar && App.attackcheck)
             {
-                App.previousRow = currentrow;
-                App.previousColumn = currentcolumn;
-                App.previousBrush = brush;
                 Debug.WriteLine("cursor: " + cursor.ToList().Count);
+
+                foreach (var hit in FindVisualChildren<Button>(Game))
+                {
+                    hit.IsHitTestVisible = false;
+                }
+
                 foreach (var kara in cursor)
                 {
                     var validEnemy = App.cpuChar.Where(z => Math.Abs(currentcolumn - z.Xcord) + Math.Abs(currentrow - z.Ycord) == kara.Range);
                     Debug.WriteLine("kara range: " + kara.Range);
                     Debug.WriteLine("kara name: " + kara.Name);
-                    foreach(var enemy in App.cpuChar)
+                    foreach (var enemy in App.cpuChar)
                     {
                         Debug.WriteLine("distance: " + (Math.Abs(currentcolumn - enemy.Xcord) + Math.Abs(currentrow - enemy.Ycord)));
                     }
@@ -253,31 +259,98 @@ namespace Sharp_Emblem
                     {
                         if (MessageBox.Show("An Enemy is in range, do you wish to attack?", "Attacking", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
                         {
-
+                            
                         }
                         else
                         {
-                            App.attackcheck = true;
-                            foreach (var hit in FindVisualChildren<Button>(Game))
+                            Debug.WriteLine("attack check check");
+                            App.attackcheck = false;
+                            foreach (var valid in validEnemy)
                             {
-                                hit.IsHitTestVisible = false;
+                                var enemyPos = FindVisualChildren<Button>(Game).ToList().Where(e => Grid.GetColumn(e) == valid.Xcord && Grid.GetRow(e) == valid.Ycord).ToList();
+                                Debug.WriteLine("enemy positions: " + validEnemy.ToList().Count);
+                                foreach (var pos in enemyPos)
+                                {
+                                    pos.IsHitTestVisible = true;
+                                }
                             }
                         }
                     }
-                    if (App.attackcheck)
+                }
+            }
+            else if (!App.attackcheck)
+            {
+                Debug.WriteLine("attack trigger succes");
+                /*using (var db = new sharpemblemContext())
+                {
+                    Turns update = db.Turns.FirstOrDefault();
+                    update.Counter = App.turn;
+                    db.SaveChanges();
+
+                }*/
+            }
+            else if (App.selectchar)
+            {
+                {
+                    foreach (Button btn in FindVisualChildren<Button>(Game))
                     {
-                        Debug.WriteLine("attack trigger succes");
+
+                        var row = Grid.GetRow(btn);
+                        var column = Grid.GetColumn(btn);
+
+
+                        int xdistance = Math.Abs(currentcolumn - column);
+                        int ydistance = Math.Abs(currentrow - row);
+                        int distance = xdistance + ydistance;
+                        var hittestif = FindVisualChildren<Button>(Game).Where(b => b.IsHitTestVisible = true);
+
+                        foreach (var kara in cursor)
+                        {
+                            if (distance <= kara.Movement)
+                            {
+                                if (btn.Background == playerBrushs[0] || btn.Background == playerBrushs[1] || btn.Background == playerBrushs[2] || btn.Background == playerBrushs[3] || btn.Background == cpuBrushs[0] || btn.Background == cpuBrushs[1] || btn.Background == cpuBrushs[2] || btn.Background == cpuBrushs[3])
+                                {
+                                    btn.IsHitTestVisible = false;
+                                }
+                                else
+                                {
+                                    if (((SolidColorBrush)btn.Background).Color == Colors.Blue)
+                                    {
+                                        if (kara.FlyMov)
+                                        {
+                                            btn.IsHitTestVisible = true;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        btn.IsHitTestVisible = true;
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                btn.IsHitTestVisible = false;
+                            }
+                        }
+                        App.selectchar = false;
                     }
                 }
-                
+            }
+            else if (!App.selectchar)
+            {
+                currentbutton.Background = App.previousBrush;
+                var startpos = App.playerChar.Where(z => z.Xcord == App.previousColumn && z.Ycord == App.previousRow).ToList();
+                var hittestelse = FindVisualChildren<Button>(Game).Where(b => b.IsHitTestVisible = true);
 
+                foreach (var hit in hittestelse)
+                {
+                    hit.IsHitTestVisible = false;
+                }
                 foreach (Button btn in FindVisualChildren<Button>(Game))
                 {
 
                     var row = Grid.GetRow(btn);
                     var column = Grid.GetColumn(btn);
-
-
                     int xdistance = Math.Abs(currentcolumn - column);
                     int ydistance = Math.Abs(currentrow - row);
                     int distance = xdistance + ydistance;
@@ -958,6 +1031,33 @@ namespace Sharp_Emblem
             {
                 //attacking died
             }
+                    foreach (var kara in startpos)
+                    {
+                        kara.Xcord = currentcolumn; kara.Ycord = currentrow;
+
+                        if (column == App.previousColumn && row == App.previousRow)
+                        {
+                            SolidColorBrush tempBrush = new SolidColorBrush();
+                            tempBrush = kara.FirstBrush;
+                            kara.FirstBrush = currentbutton.Background as SolidColorBrush;
+
+                            btn.Background = tempBrush;
+
+                        }
+                    }
+
+                    if (btn.Background == playerBrushs[0] || btn.Background == playerBrushs[1] || btn.Background == playerBrushs[2] || btn.Background == playerBrushs[3] || btn.Background == cpuBrushs[0] || btn.Background == cpuBrushs[1] || btn.Background == cpuBrushs[2] || btn.Background == cpuBrushs[3])
+                    {
+                        btn.IsHitTestVisible = true;
+                        currentbutton.IsHitTestVisible = false;
+
+                    }
+                }
+
+                App.selectchar = true;
+            }
+            App.charcount++;
+
         }
     }
 }
